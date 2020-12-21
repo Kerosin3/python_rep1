@@ -22,3 +22,4 @@ print('Android,english:',len(d))
 print('net amount of free apps in GooglePlay',len(library.findingFreeApps(d)))
 #print(explore_data(readed_file1,1,3,True))
 #here I am testing githubing
+#http://www.deanbodenham.com/learn/using-git-to-sync-different-computers.html
