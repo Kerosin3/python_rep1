@@ -62,9 +62,11 @@ def fix2(dataset,header=True,isAndroid=True):
         dataset=dataset[1:]
     rating = 3
     name_c=0
+    store= 'Android'
     if not isAndroid:
         rating=5
         name_c=1
+        store = 'AppStore'
     for app in dataset:
         name = app[name_c]
         #print('here is name:',name)
@@ -73,9 +75,12 @@ def fix2(dataset,header=True,isAndroid=True):
             added_list.append(name)
             final_list.append(app)
     #print(added_list)
+    english_count =0
     for apps in final_list:
         if if_english(apps[name_c]):
             english_list.append(apps)
+            english_count+=1
+    print('total not english apps that have been rejected in %s is %d:' % (store,len(dataset)-english_count))
     return final_list,english_list
 
 
@@ -88,4 +93,14 @@ def if_english(string):
         return False  
     else:
         return True
- 
+
+def findingFreeApps(dataset,consistHeader=False,ifAndroid=True):
+    colomn_num=7 #android
+    apps_list=[]
+    if not ifAndroid:
+        colomn_num = 4
+    for apps in dataset:
+        if float(apps[colomn_num]) != 0.0:
+            apps_list.append(apps)
+    return apps_list
+
