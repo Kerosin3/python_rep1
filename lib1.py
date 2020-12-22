@@ -106,4 +106,36 @@ def findingFreeApps(dataset,consistHeader=False,ifAndroid=True):
         elif (apps[colomn_num]) == '0.0': # free apps
             apps_list.append(apps)
     return apps_list
+def getColomn(dataset,column_num,isHeader=True,isAndroid=True):
+    list_out = {}
+    table = {}
+    total = 0
+    out_table = []
+    if isHeader:
+        dataset = dataset[1:]
+        name_c= 1 # iOs
+    if isAndroid:
+        name_c = 0
+    for apps in dataset:
+        list_out[apps[name_c]] = apps[column_num]
+    #frequences
+    for item in list_out:
+        total+=1
+        #print(item,list_out[item])
+        
+        if list_out[item] not in table:
+            table[list_out[item]] =1
+        else:
+            table[list_out[item]] += 1
+    #print('table len:',len(table))
+    #c=0
+    for item in table:
+        #c+=1
+        percentage = round((table[item] / total) * 100,2)
+        d=(percentage,table[item],item)
+        #print(d)
+        out_table.append(d)
 
+    #print('counted total:',c)
+    return (list_out,table,out_table)
+    
