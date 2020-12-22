@@ -98,9 +98,12 @@ def findingFreeApps(dataset,consistHeader=False,ifAndroid=True):
     colomn_num=7 #android
     apps_list=[]
     if not ifAndroid:
-        colomn_num = 4
+        colomn_num = 4 #iOS
     for apps in dataset:
-        if float(apps[colomn_num]) != 0.0:
+        if ifAndroid:
+            if apps[colomn_num] == '0': #free apss
+                apps_list.append(apps)
+        elif (apps[colomn_num]) == '0.0': # free apps
             apps_list.append(apps)
     return apps_list
 

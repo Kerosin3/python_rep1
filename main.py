@@ -16,10 +16,14 @@ c,d= library.fix2(readed_file2,True,True)
 
 print('Appstore net amount of unique apps',len(a))
 print('Appstore,english:',len(b))
-print('net amount of free apps is Appstore',len(library.findingFreeApps(a)))
 print('Android net amount of unique apps:',len(c))
 print('Android,english:',len(d))
-print('net amount of free apps in GooglePlay',len(library.findingFreeApps(d)))
+free_apps_adnroid = len(library.findingFreeApps(c,False,True))
+free_apps_ios = len(library.findingFreeApps(a,False,False))
+print('net amount of free apps in GooglePlay',free_apps_adnroid)
+print('net amount of free apps is Appstore',free_apps_ios)
+#print('non-free apps in Android:', free_apps_adnroid)
+#print('non-free apps in iOs:', free_apps_ios)
 #print(explore_data(readed_file1,1,3,True))
 #here I am testing githubing
 #http://www.deanbodenham.com/learn/using-git-to-sync-different-computers.html
