@@ -22,10 +22,13 @@ free_apps_adnroid = (library.findingFreeApps(c,False,True))
 free_apps_ios = (library.findingFreeApps(a,False,False))
 print('net amount of free apps in GooglePlay',len(free_apps_adnroid))
 print('net amount of free apps is Appstore',len(free_apps_ios))
-(x,y,z)=library.getColomn(free_apps_adnroid,9,False,True)
-table_sorted = sorted(z, reverse = True)
+(x,y,z)=library.getColomn(free_apps_adnroid,9,False,True) # 9 - number of genre's colomn
+(_,_,e)=library.getColomn(free_apps_ios,11,False,isAndroid=False) # 
+table_sortedAndroid = sorted(z, reverse = True)
+table_sortediOs = sorted(e, reverse = True)
 #print(len(z))
-print(table_sorted)
+#print(table_sortedAndroid)
+print(table_sortediOs)
 
 #print(table_sorted)
 #print(x['FR Tides'])

@@ -111,9 +111,9 @@ def getColomn(dataset,column_num,isHeader=True,isAndroid=True):
     table = {}
     total = 0
     out_table = []
+    name_c= 1 # iOs
     if isHeader:
         dataset = dataset[1:]
-        name_c= 1 # iOs
     if isAndroid:
         name_c = 0
     for apps in dataset:
