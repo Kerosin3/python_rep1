@@ -23,13 +23,18 @@ free_apps_ios = (library.findingFreeApps(a,False,False))
 print('net amount of free apps in GooglePlay',len(free_apps_adnroid))
 print('net amount of free apps is Appstore',len(free_apps_ios))
 (x,y,z)=library.getColomn(free_apps_adnroid,9,False,True) # 9 - number of genre's colomn
-(_,_,e)=library.getColomn(free_apps_ios,11,False,isAndroid=False) # 
+#(_,_,e)=library.getColomn(free_apps_ios,11,False,isAndroid=False) # 
+#print(z[1])
 table_sortedAndroid = sorted(z, reverse = True)
-table_sortediOs = sorted(e, reverse = True)
-#print(len(z))
 #print(table_sortedAndroid)
-print(table_sortediOs)
-
+#table_sortediOs = sorted(e, reverse = True)
+#library.GenreInstallationsFrequences(readed_file2)
+#print(table_sortedAndroid)
+#print(table_sortediOs)
+#t0 = library.installsFreq(free_apps_adnroid)
+#print(sorted(t0, reverse = True))
+#t1 = table_sortedAndroid = sorted(t0, reverse = True)
+#print(t0)
 #print(table_sorted)
 #print(x['FR Tides'])
 #print('non-free apps in Android:', free_apps_adnroid)
